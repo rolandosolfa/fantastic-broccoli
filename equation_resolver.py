@@ -8,40 +8,57 @@ def equazione2(a, b, c):
         if b == 0 and c != 0:
             print("impossibile")
 
+            return -1
+
         elif (b != 0 and c == 0):
-            print("L'unica soluzione è 0")
+            x1 = 0
+
+            print("L'unica soluzione è" + x1)
+
+            return x1
 
         elif (b == 0 and c == 0):
             print("L'equazione è indeterminata")
 
-        else:
-            return -c / b
-    else:
-        if delta > 0:  # parentesi e spazi
+            return -1
 
-            x1 = (-b + sqrt(delta)) / (2 * a)  # dichiarazione variabili
+        else:
+            x1 = -c / b
+
+            print("L'unica soluzione è " + x1)
+
+            return x1
+    else:
+        if delta > 0:
+
+            x1 = (-b + sqrt(delta)) / (2 * a)
             x2 = (-b - sqrt(delta)) / (2 * a)
 
-            return (x1, x2)
+            return x1, x2
 
         elif delta == 0:
 
             x1 = -b / (2 * a)
 
-            print("L'unica soluzione è x1")
+            print("L'unica soluzione è " + x1)
 
             return x1
 
         else:
             delta = delta * (-1)
 
-            Re = -b / (2 * a)
-            Im = sqrt(delta) / (2 * a)
+            re = -b / (2 * a)
+            im = sqrt(delta) / (2 * a)
 
-            values = {"Re": Re,
-                      "Im": Im}
+            values = {"Re": re,
+                      "Im": im}
 
             print("L'equazione da risultati in campo complesso")
 
+            # https://stackoverflow.com/questions/7746143/formatting-complex-numbers
+            # https://stackoverflow.com/questions/24669964/pretty-printing-of-complex-numbers
             print("x1 =" " " + str(values["Re"]) + "+" + str(values["Im"]) + "j")
             print("x2 =" " " + str(values["Re"]) + "-" + str(values["Im"]) + "j")
+
+            # Compiti a casa :-)
+            # return ???
